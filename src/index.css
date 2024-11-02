@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* NavBar Component */
+  .nav-body {
+    @apply w-[64%] sm:w-[71%] md:w-[70%] lg:w-[78%] ml-auto;
+  }
+  /* Product Component */
+  .product-body {
+    @apply grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 w-[64%] sm:w-[71%] md:w-[70%] lg:w-[78%] ml-auto;
+  }
+  .card {
+    @apply sm:w-[200px] md:w-[170px] lg:w-[200px] xl:mb-10 flex sm:block border border-2 p-3 sm:p-5 m-2 mt-2;
+  }
+  .card-image {
+    @apply w-[150px]  md:w-[140px] lg:w-[150px];
+  }
+  .card-title {
+    @apply font-bold pt-3 text-sm;
+  }
+
+  /* Recommended Component */
+  .recommended {
+    @apply w-[64%] sm:w-[71%] md:w-[70%] lg:w-[78%] ml-auto pt-4;
+  }
+  .recommended-btns {
+    @apply mr-2 border
+     rounded-xl
+     p-1
+     px-2 
+     sm:px-3
+     mb-2
+     text-xs
+     sm:text-sm
+     border-gray-950
+     hover:bg-gray-950
+     hover:font-bold
+     hover:text-[#fff];
+  }
+  .recommended-title {
+    @apply font-bold sm:text-xl;
+  }
+  /* SideBar Component */
+  .sidebar-body {
+    @apply w-[35%]  sm:w-[28%] lg:w-[20%] xl:w-[18%] text-white lg:flex justify-center;
+  }
+
+  @layer components {
+    /* SideBar Component */
+    .sidebar-title {
+      @apply text-lg font-semibold lg:mb-5  flex justify-center; /* Center title */
+    }
+
+    .sidebar-label-container {
+      @apply flex items-center mb-2 cursor-pointer; /* Align items and space out labels */
+      -webkit-user-select: none; /*Prevent user selection*/
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none; /*Prevent user selection*/
+    }
+    .sidebar-label-container input {
+      @apply absolute opacity-0 cursor-pointer; /* Hide default radio button */
+    }
+
+    .sidebar-label-container:hover input ~ .checkmark {
+      @apply bg-gray-300; /* Change background on hover */
+    }
+
+    .sidebar-label-container input:checked ~ .checkmark {
+      @apply bg-orange-500; /* Change background when checked */
+    }
+    .gradient {
+      @apply bg-gradient-to-r from-blue-900 to-red-700;
+    }
+    .checkmark {
+      @apply h-4 w-4 sm:h-5 sm:w-5 bg-gray-300 rounded-full mr-2; /* Add margin for spacing */
+    }
+  }
+}
